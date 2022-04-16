@@ -18,3 +18,6 @@ The following equiptment required:
  The following installations required: 
   1. Magewell capture card software
   2. 
+
+
+* Not deinterlacing not required (expand); if skipped video can be interpreted at XX FPS and to turn this off comment out line X in script X usng a '#' key. *
