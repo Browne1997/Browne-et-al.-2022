@@ -3,7 +3,9 @@
 Author: Erin Browne and David Hutchinson 
 
 Customised codes for data preparation:
-  1. 
+  1. deinterlace
+  2. extract_frames for training
+  3. convert annotated frame .xls produced by Biigle in VIAME API .csv for producing training and test formatted and split datasets for training YOLO versions 3 and 4.
 
 Real-time codes:
 The following codes are highlighted in consecuetive steps to describe the process of sea deployment of a YOLOv3 or v4 classifiers to detect a target species or multiple target species.
