@@ -37,7 +37,7 @@ Table 1| Sources for weights and configuration files for training from scratch (
 | Detection type | Explanation |
 | ------------- | ------------- |
 | True positives (TP)  | the number of correct detections of a ground-truth bounding box  |
-| False positives (FP)  | Content Cell  |
+| False positives (FP)  | the number of incorrect detections of a non-existent object or a detection misplaced from the ground-truth bounding boxes  |
 | False negative (FN)  | Content Cell  |
 
 | True positives (TP) the number of correct detections of a ground-truth bounding box |
