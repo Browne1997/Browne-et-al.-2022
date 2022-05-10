@@ -24,9 +24,9 @@ This documents where the ‘off-the-shelf’ classifier architectures weights fi
 
 S2 Table 1| Sources for weights (where learnt parameters are stored corresponding to features of the target class) and configuration files (outlining classifiers architecture in terms of functions, mathematics etc.) for training from scratch (VIAME API GitHub Version 0.15.1 (YOLOv3) and Version 0.17.2 (YOLOv4) and transfer learning (AlexeyAB GitHub).
 
-| Classifiers  | Weights files   | Configuration files |
-| ------------ | --------|------- | --------------- |
-|              | Scratch | Transfer |               |
+| Classifiers  | Weights files      | Configuration files |
+| ------------ | --------|--------- | ------------------- |
+|              | Scratch | Transfer |                     |
 | YOLOv3       | https://pjreddie.com/media/files/yolov3-spp.weights and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_v3_seed.weights | https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov3-spp.cfg and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_train.cfg |
 | YOLOv4       | https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137 and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_seed.weights  |  https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_train.cfg |
 
