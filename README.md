@@ -40,21 +40,30 @@ Table 1| Sources for weights and configuration files for training from scratch (
 | False positives (FP)  | the number of incorrect detections of a non-existent object or a detection misplaced from the ground-truth bounding boxes  |
 | False negative (FN)  | the number of undetected ground-truth bounding boxes  |
 
-In order to define what a correct detection is the Intersection over Union (IoU) metric is used. IoU measures the overlapping area between the predicted bounding box (B_p) and the ground-truth bounding box (B_gt) from the training dataset, and divided by the area of union between them. It can be defined using the following equation (Padilla et al., 2020),  
-IoU=  area(B_p∩B_gt )/(area(B_p∪B_gt ).    (1)
+In order to define what a correct detection is the Intersection over Union (IoU) metric is used. IoU measures the overlapping area between the predicted bounding box (B_p) and the ground-truth bounding box (B_gt) from the training dataset (1.), and divided by the area of union between them. It can be defined using the following equation (Padilla et al., 2020)
+
+IoU = area(B_p∩B_gt)/(area(B_p∪B_gt ).    (1)
+
 The IoU has an associated threshold (t) that is pre-defined by the user, thus a correct detection can be classified as IoU ≥t and incorrect if IoU <t. In this case IoU was set to 0.5; meaning 50% overlap between B_p and B_gt is required for a detection to be counted as a TP. 
+
 From the number of TP, FP, FN detections made by the classifiers precision P and recall R are calculated respectively and defined as
 P=  TP/(TP+FP),     (2)
 R=  TP/(TP+FN).     (3)
-Precision is the percentage of TPs within all the predictions (i.e. rate of FPs), where IoU threshold is 0.5. Whilst recall is the percentage of TPs amongst all the given ground truths. During each training cycle the classifiers precision and recall values are plotted on a P-R curve, were the area under the P-R curve (AUC) indicates the classifiers performance, a good performance would be indicative of a high precision with increasing recall. To increase the accuracy of AUC the curve is interpolated using an 11-pointed average precision (AP, Everingham et al., 2010) defined as:
-AP=  1/11 ∑_(R∈{0,0.1,….1})▒〖P_interp (R)〗,(4)
+
+Precision is the percentage of TPs within all the predictions (i.e. rate of FPs), where IoU threshold is 0.5. Whilst recall is the percentage of TPs amongst all the given ground truths. During each training cycle the classifiers precision and recall values are plotted on a P-R curve, were the area under the P-R curve (AUC) indicates the classifiers performance, a good performance would be indicative of a high precision with increasing recall.
+
+To increase the accuracy of AUC the curve is interpolated using an 11-pointed average precision (AP, Everingham et al., 2010) defined as:
+
+AP=  1/11 ∑_(R∈{0,0.1,….1})〖P_interp (R)〗,(4)
+
 Where,
-P_interp (R)=max⁡〖P(R ̃),〗  R ̃≥R.   (5)
+P_interp (R)=max⁡P(R ̃),  R ̃≥ R.   (5)
+
 Here the maximum precision P_interp (R) at 11 equally spaced recall levels [0,0.1,...,1] is averaged. Then mAP is calculated to give a measure of an object detectors performance given multiple classes are represented in the training dataset. Thus, it can be defined as: 
-mAP=  1/N ∑_(i=1)^N▒〖AP_i 〗,(6)
+
+mAP=  1/N ∑_(i=1)^N〖AP_i 〗,(6)
+
 Where the AP_i is simply the AP at each 11 point interval (i) on the P-R curve over all classes (N) (Padilla et al., 2020). In this study N =1 making mAP≈AP.
-
-
 
 # 3. Real-time codes:
 The following codes are highlighted in consecuetive steps to describe the process of sea deployment of a YOLOv3 or v4 classifiers to detect a target species or multiple target species.
