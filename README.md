@@ -65,7 +65,7 @@ mAP=  1/N ∑_(i=1)^N〖AP_i 〗,(6)
 
 Where the AP_i is simply the AP at each 11 point interval (i) on the P-R curve over all classes (N) (Padilla et al., 2020). In this study N =1 making mAP≈AP.
 
-# 3. Real-time codes:
+# 3. Instructions and codes used in Methods: Testing classifier performance using independent data as part of a novel pipeline for real-time ROV deployment: in-situ and synthetic ship
 The following codes are highlighted in consecuetive steps to describe the process of sea deployment of a YOLOv3 or v4 classifiers to detect a target species or multiple target species.
 
 Data outputs are individually saved frame from the darknet detector, denoting the object detected within the image is done with a bounding box and a confidence score. Additionally a .csv file is produce with every detection made and at which time within the video and frame number.
