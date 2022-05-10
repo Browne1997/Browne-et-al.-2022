@@ -12,8 +12,8 @@ Figure 1| Training data preparation
 1. extract_frames_N.py: code to produce deinterlaced framegrabs at 20 secs or 1min intervals from ROV Isis video (see Fig.1A) + * Code required to run the ffmpeg section * - DAVID
 2. xls2csv.py: code to transform BIIGLE annotation .xls files to VIAME .csv format (see Fig.1B)
 3. Installation instruction for VIAME 
-3i. Instructions (+ file structure) to run the pre-processing of the raw framegrabs for data augmentation
-4. skip_viame.py: code to produce same data outputs needed for training as VIAME without the augmentation of brightness and resolution variance (see Fig1.C)
+  - 3i. Instructions (+ file structure) to run the pre-processing of the raw framegrabs for data augmentation
+5. skip_viame.py: code to produce same data outputs needed for training as VIAME without the augmentation of brightness and resolution variance (see Fig1.C)
 
 # Instructions and codes used in Methods: Training classifiers and Assessment of classifier training performance
 1. Instructions to compile Darknet deep learning framework to user local machine for 1) training and 2) Real-time running
@@ -24,9 +24,9 @@ This documents where the ‘off-the-shelf’ classifier architectures weights fi
 
 S2 Table 1| Sources for weights (where learnt parameters are stored corresponding to features of the target class) and configuration files (outlining classifiers architecture in terms of functions, mathematics etc.) for training from scratch (VIAME API GitHub Version 0.15.1 (YOLOv3) and Version 0.17.2 (YOLOv4) and transfer learning (AlexeyAB GitHub).
 
-| Classifiers  | Weights files | Configuration files |
-| -------------| ------------- | ------------------- |
-|              | Scratch | Transfer | Scratch | Transfer |
+| Classifiers  | Weights files      | Configuration files |
+| -------------| ------------------ | ------------------- |
+|              | Scratch | Transfer | Scratch | Transfer  |
 | YOLOv3       | https://pjreddie.com/media/files/yolov3-spp.weights and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_v3_seed.weights | https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov3-spp.cfg and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_train.cfg |
 | YOLOv4       | https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137 and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_seed.weights  |  https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_train.cfg |
 
