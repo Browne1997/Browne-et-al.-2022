@@ -18,7 +18,7 @@ Figure 1| Training data preparation
 # Instructions and codes used in Methods: Training classifiers and Assessment of classifier training performance
 1. Instructions to compile Darknet deep learning framework to user local machine for 1) training and 2) Real-time running
 2. File structure for training on local machine should be as follows:
-# FIGURE OF THIS ERIN 
+ FIGURE OF THIS ERIN 
 3. Weights and configuration files explanation and source:
 This documents where the ‘off-the-shelf’ classifier architectures weights files (used for storing the parameters learnt during training) and corresponding configuration files are sourced. These weights are either pre-trained on larger imagery datasets (lower level features already learned and stored in weights file), also known as transfer learning. Or the weights have no pre-trained features, therefore all features learned and stored in the weights files are directly from the training imagery created in this study. 
 
