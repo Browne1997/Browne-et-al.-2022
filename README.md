@@ -1,4 +1,4 @@
-# Codes used in support of publication: Browne et al 2022
+# Guidance and code used in publication Browne et al 2022
 
 Author: Erin Browne and David Hutchinson 
 
