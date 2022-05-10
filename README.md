@@ -32,8 +32,8 @@ S2 Table 1| Sources for weights (where learnt parameters are stored correspondin
 The following performance metrics are used to calculate mAP:
 
 | True positives (TP) | the number of correct detections of a ground-truth bounding box |
-| False positives (FP)| the number of incorrect detections of a non-existent object or a detection misplaced from the ground-truth bounding boxes |
-| False negative (FN) | the number of undetected ground-truth bounding boxes |
+| False positives (FP)| the number of incorrect detections of a non-existent object or a detection misplaced from the ground-truth bounding boxes                                                             |
+| False negative (FN) | the number of undetected ground-truth bounding boxes            |
 
 In order to define what a correct detection is the Intersection over Union (IoU) metric is used. IoU measures the overlapping area between the predicted bounding box (B_p) and the ground-truth bounding box (B_gt) from the training dataset, and divided by the area of union between them. It can be defined using the following equation (Padilla et al., 2020),  
 IoU=  area(B_p∩B_gt )/(area(B_p∪B_gt ).    (1)
@@ -48,8 +48,6 @@ P_interp (R)=max⁡〖P(R ̃),〗  R ̃≥R.   (5)
 Here the maximum precision P_interp (R) at 11 equally spaced recall levels [0,0.1,...,1] is averaged. Then mAP is calculated to give a measure of an object detectors performance given multiple classes are represented in the training dataset. Thus, it can be defined as: 
 mAP=  1/N ∑_(i=1)^N▒〖AP_i 〗,(6)
 Where the AP_i is simply the AP at each 11 point interval (i) on the P-R curve over all classes (N) (Padilla et al., 2020). In this study N =1 making mAP≈AP.
-
-
 
 
 
