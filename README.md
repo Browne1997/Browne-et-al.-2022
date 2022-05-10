@@ -12,8 +12,7 @@ Figure 1| Training data preparation
 1. extract_frames_N.py: code to produce deinterlaced framegrabs at 20 secs or 1min intervals from ROV Isis video (see Fig.1A) + * Code required to run the ffmpeg section * - DAVID
 2. xls2csv.py: code to transform BIIGLE annotation .xls files to VIAME .csv format (see Fig.1B)
 3. Installation instruction for VIAME 
-  
-  3i. Instructions (+ file structure) to run the pre-processing of the raw framegrabs for data augmentation
+3i. Instructions (+ file structure) to run the pre-processing of the raw framegrabs for data augmentation
 4. skip_viame.py: code to produce same data outputs needed for training as VIAME without the augmentation of brightness and resolution variance (see Fig1.C)
 
 # Instructions and codes used in Methods: Training classifiers and Assessment of classifier training performance
@@ -23,16 +22,12 @@ Figure 1| Training data preparation
 3. Weights and configuration files explanation and source:
 This documents where the ‘off-the-shelf’ classifier architectures weights files (used for storing the parameters learnt during training) and corresponding configuration files are sourced. These weights are either pre-trained on larger imagery datasets (lower level features already learned and stored in weights file), also known as transfer learning. Or the weights have no pre-trained features, therefore all features learned and stored in the weights files are directly from the training imagery created in this study. 
 
-S2 Table 1| Sources for weights (where learnt parameters are stored corresponding to features of the target class) and configuration files (outlining classifiers architecture in terms of functions, mathematics etc.) for training from scratch (VIAME API GitHub) and transfer learning (AlexeyAB GitHub).
-|Classifier|Weight files|Configuration files|
-|          |-------------------|-------------------| 
-|          |AlexeyAB GitHub|VIAME API GitHub|AlexeyAB GitHub|VIAME API GitHub|
-|
+S2 Table 1| Sources for weights (where learnt parameters are stored corresponding to features of the target class) and configuration files (outlining classifiers architecture in terms of functions, mathematics etc.) for training from scratch (VIAME API GitHub Version 0.15.1) and transfer learning (AlexeyAB GitHub).
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Classifiers  | Weights files | Configuration files |
+| -------------| ------------- | ------------------- |
+| YOLOv3       | https://pjreddie.com/media/files/yolov3-spp.weights and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolov3-spp.weights |
+| YOLOv4       | Content Cell  |  somthing           |
 
 
 
