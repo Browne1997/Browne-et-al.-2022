@@ -1,1 +1,38 @@
 
+As with many applications that use the GPU for computation, darknet needs to be compiled for each host machine to ensure it matches the installed versions of CUDA and CUDNN (if used)
+
+These notes assume a Linux host system with a GPU, and were tested on Ubuntu 18.04 with an RTX 2070 and later with an RTX 3090.
+
+1. Install CUDA and CUDNN. Nvidia provide detailed instructions at https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html , and there are many other webpages describing this intricate process. Note that the version of CUDNN required is linked to the GPU model (our RTX 3090 requires 8.2 or later) - see https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html. [Tested using CUDA 11.3 and CUDNN 8.2.1]
+
+2. Download the darknet git repo:
+> git clone https://github.com/AlexeyAB/darknet.git
+
+3. as listed under the 'Requirements for Windows, Linux and macOS' heading in the README.md file (in the darknet directory), install normal C development tools, including cmake (version 3.18 or later) and the OpenCV library
+
+4. Follow the instructions at the 'How to compile on Linux/macOS (using CMake)' section.
+
+> cd darknet
+> mkdir build_release
+> cd build_release
+
+We needed to make a few changes, and so used cmake-gui for simplicity. Select the darknet directory for source code, darknet/build_release for binaries. Changes needed
+
+CMAKE_CUDA_ARCHITECTURES describes the families of GPU hardware we're compiling for. The RTX2070 is architecture 75, the 3090 is 86, so the value is 75;86 (a cmake LIST)
+
+Switch off ENABLE_ZED_CAMERA and ENABLE_VCPKG_INTEGRATION
+
+Switch on ENABLE_CUDA and ENABLE_CUDNN and ENABLE_OPENCV
+If using an architecture >=70, switch on ENABLE_CUDNN_HALF
+
+Press Configure - select native build tools when asked (normal Makefiles). Correct any errors until no config options are showed on a red background:
+- On our installation, the Nvidia compiler was installed in /usr/local/cuda-11.3, so we needed to select advanced, and then set
+CMAKE_CUDA_COMPILER to /usr/local/cuda-11.3/bin/nvcc
+
+Then press Configure again
+
+Press Generate and exit cmake-gui
+
+> make -j 4  # change 4 to the number of CPUs on your machine
+> make install
+should result in the darknet executable and the libdarknet.so library being in the top-level darknet directory.
