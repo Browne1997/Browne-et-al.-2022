@@ -12,7 +12,7 @@ Figure 1| Training data preparation
 1. extract_frames_N.py: code to produce deinterlaced framegrabs at 20 secs or 1min intervals from ROV Isis video (see Fig.1A) + * Code required to run the ffmpeg section * - DAVID
 2. xls2csv.py: code to transform BIIGLE annotation .xls files to VIAME .csv format (see Fig.1B)
 3. viame_installation: Installation instructions for VIAME at https://github.com/VIAME/VIAME 
-   * 3i. viame_pre-processing: Instructions (+ file structure) to run the pre-processing of the raw framegrabs for data augmentation
+   * 3i. viame_pre-processing: Instructions (+ file structure) to run the pre-processing of the raw framegrabs for data augmentation (ERIN FINISH WITH IMAGE)
 4. skip_viame.py: code to produce same data outputs needed for training as VIAME without the augmentation of brightness and resolution variance (see Fig1.C)
 
 # 2. Instructions and codes used in Methods: Training classifiers and Assessment of classifier training performance
