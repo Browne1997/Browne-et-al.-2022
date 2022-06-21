@@ -54,27 +54,25 @@ The following equiptment required:
 
 * Not deinterlacing not required (expand); if skipped video can be interpreted at XX FPS and to turn this off comment out line X in script X usng a '#' key. *
 
-# 4. Instructions and codes used in Methods: Calculating classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
-
-1. XCODEX: Calculation of recall, precision, accuracy and F1 score metrics
+# 4. Computer vision metrics used in Methods: Calculating classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
 
 Recall (sensitivity or true positive rate) quantifies the proportion of areas (1s increments along transect) of S. fragilissima in the transect correctly identified. It varies between 0 and 1, were 1 means all areas are identified.
-$Recall=  TP/(TP+FN)  .   (7)
+        * Recall=  TP/(TP+FN)  .   (7)
 
 Precision (positive predictive value) quantifies the proportion of TPs among all the positive predictions for areas of S. fragilissima. A value of 1 indicates all the positive detections for areas of S. fragilissima are in fact areas of S. fragilissima.
-$Precision=  TP/(TP+FP)  .   (8)
+        * Precision=  TP/(TP+FP)  .   (8)
 
 Accuracy quantifies the number of all correct predictions (TP + TN) for areas of S. fragilissima presence or absence with respect to the total predictions made. A value of 1 implies no false predictions (FP + FN) and all correct predictions are identified.  
-$Accuracy=  (TP+TN)/(TP+FP+TN+FN)  .   (9)
+        * Accuracy=  (TP+TN)/(TP+FP+TN+FN)  .   (9)
 
 F1 Score quantifies the harmonic mean of precision and recall, meaning a value of 1 indicates perfect precision and recall (as defined in equation 7 and 8). 
-$F_1=  TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall).   (10)
+        * F_1=  TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall).   (10)
 
 Each metric gave an estimation of the overall performance of each classifier in order to determine the best performing in real-time analysis, as well as being fitting for an ecological setting.
 
 S7: Assessing error of the best classifier at counting individual S. fragilissima
 Root mean square error calculation:
-$RMSE= √MSE  = √(1/N ∑_(i=1)^N▒〖(y_i-(y_i ) ̂ 〗) )^2,    (11)
-Where, N is the amount of data points (N = 100), i is the data point number being compared (1 – 100th), y_i is the count of S. fragilissima at the ith data point that is manually counted, whilst (y_i ) ̂ is the corresponding predicted count made by the classifier. 
+        * RMSE= √MSE  = √(1/N ∑_{(i=1)}^N▒〖(y_i-(y_i ) ̂ 〗) )^2,    (11)
+Where, N is the amount of data points (N = 100), i is the data point number being compared (1 – 100th), y_i is the count of S. fragilissima at the ith data point that is manually counted, whilst (${y_i}) ̂ is the corresponding predicted count made by the classifier. 
 
 
