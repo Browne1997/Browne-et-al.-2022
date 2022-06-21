@@ -18,7 +18,7 @@ Figure 1| Training data preparation
 
 # 2. Instructions and codes used in Methods: Training classifiers and Assessment of classifier training performance
 
-1. darknet_compiling: Instructions to compile Darknet deep learning framework to user local machine for 1) training and 2) Real-time running
+1. darknet_compiling: Instructions to compile Darknet on local machine for 1) training and 2) Real-time running
 2. File structure for training on local machine should be as follows:
  FIGURE OF THIS ERIN 
 3. Weights and configuration files explanation and source
@@ -54,8 +54,6 @@ The following equiptment is required:
   3. Transform .JSON generated detections (darknet detector demo) into a readable .csv format for classifier performance analysis (4.): save_data.py
 
 Data outputs are individually saved frame from the darknet detector, denoting the object detected within the image is done with a bounding box and a confidence score. Additionally a .csv file is produce with every detection made and at which time within the video and frame number.
-
-* Not deinterlacing not required (expand); if skipped video can be interpreted at XX FPS and to turn this off comment out line X in script X usng a '#' key. *
 
 # 4. Computer vision metrics used in Methods: Calculating classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
 
