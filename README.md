@@ -34,23 +34,26 @@ Table 1| Sources for weights and configuration files for training from scratch (
 4. set_training: using the outlined file structure (2.2) with the produce training image datasets (1.3 and 1.5) and sourced weights and configuration files this code will instruct how to run the training process on the users local machine (source code comes from: https://github.com/AlexeyAB/darknet)
 
 # 3. Instructions and codes used in Methods: Testing classifier performance using independent data as part of a novel pipeline for real-time ROV deployment: in-situ and synthetic ship
-The following codes are highlighted in consecuetive steps to describe the process of sea deployment of a YOLOv3 or v4 classifiers to detect a target species or multiple target species.
-
-Data outputs are individually saved frame from the darknet detector, denoting the object detected within the image is done with a bounding box and a confidence score. Additionally a .csv file is produce with every detection made and at which time within the video and frame number.
-
 ![image](https://user-images.githubusercontent.com/91316035/163668237-5125358e-afaa-41f5-8f13-0a74f53569f1.png)
 Figure 1| In-situ set-up for real-time or synthetic ship to test real-time ability or to perform post-analysis on video data for faster results.
 
-The following equiptment required:
+The following equiptment is required:
   1. Magewell capture card inserted into computer
-  2. HDMI cable therthering from ROV topside to magewell capture card
+  2. HDMI cable tethering from ROV topside to magewell capture card (may require HDMI splitter)
   3. Computer (minimum requirements for 25FPS detecting -12GPU VRAM)
-  4. Screen
+  4. Screen/Monitor
   
- The following installations required: 
-  1. Magewell capture card software
-  2. 
+ The following installations required and codes to do so are outlined in testing_classifier 
+  1. Magewell capture card software: install_magewell.sh
+  2. FFMPEG for decoding and deinterlacing: install_ffmpeg.sh
+  3. RTSP for sending data from Magewell to endpoint (darknet detector demo): install_rtsp.sh
+ 
+ The following annotated codes outline how to run classifier over livestream or video
+  1. run_capture.sh
+  2. run_classifier.sh
+  3. Transform .JSON generated detections (darknet detector demo) into a readable .csv format for classifier performance analysis (4.): save_data.py
 
+Data outputs are individually saved frame from the darknet detector, denoting the object detected within the image is done with a bounding box and a confidence score. Additionally a .csv file is produce with every detection made and at which time within the video and frame number.
 
 * Not deinterlacing not required (expand); if skipped video can be interpreted at XX FPS and to turn this off comment out line X in script X usng a '#' key. *
 
