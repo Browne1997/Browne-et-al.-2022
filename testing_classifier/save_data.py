@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Sat Jul 24 22:45:34 2021
-
-@author: kraken
+Run this script in separate bash shell terminal window in sinc with run_classifier.sh using the following line:
+python save_data.py
 """
+# Note ensure python version 3 is within the directory path this is ran from
 
 import socket
 from time import sleep 
