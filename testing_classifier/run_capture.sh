@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# local camera test
-# reminder: X=value assigns to a bash variable, NO spaces allowed around =
+# Run in separate bash terminal window after the RTSP has been ran
+# reminder: X=value assigns to a bash variable, NO spaces allowed around 
 
-CAM_STUFF="-video_size 1920x1080   -i /dev/video3"
+# Synthetic ship set-up: run on video
+CAM_STUFF="-video_size 1920x1080   -i /video/directory"
+# In-situ set-up: run on livestream
+CAM_STUFF="-video_size 1920x1080   -i /video/directory"
 
 #ffplay $CAM_STUFF 
 
@@ -23,17 +26,13 @@ OUT_STUFF="-vcodec hevc_nvenc -preset medium -profile:v main10 -level:v 6 -g 1 -
 # the mid x is cryptic - easier as (iw/2) [centre of frame] - (704/2) [half output width]
 
 # need a way to make a multi-line, readable string into a single parameter to ffmpeg
-# stolen from https://stackoverflow.com/questions/46807924/bash-split-long-string-argument-to-multiple-lines
+# source: https://stackoverflow.com/questions/46807924/bash-split-long-string-argument-to-multiple-lines
 
-SPLIT_FILTER="[0:v]fps=fps=5,split=3[s1][s2][s3];\
-[s1]crop=704:704:0:ih-704[o1];\
-[s2]crop=704:704:(iw-704)/2:ih-704[o2];\
-[s3]crop=704:704:iw-704:ih-704[o3]"
+SPLIT_FILTER="[0:v]bwdif=mode=frame,fps=fps,split=[s1];\
+[s1]scale=1920x1056[o1];\
 
 # the single rtsp server will serve three streams, left, mid, right
 
 # hack attack "X" will remove the \newlines in the string
 ffmpeg $CAM_STUFF  -filter_complex  "$SPLIT_FILTER" \
-       -map '[o1]' $OUT_STUFF  rtsp://localhost:8554/left \
-       -map '[o2]' $OUT_STUFF  rtsp://localhost:8554/mid\
-       -map '[o3]' $OUT_STUFF  rtsp://localhost:8554/right
+       -map '[o1]' $OUT_STUFF  rtsp://localhost:8554/whole 
