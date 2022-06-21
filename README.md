@@ -33,39 +33,6 @@ Table 1| Sources for weights and configuration files for training from scratch (
 
 4. set_training: using the outlined file structure (2.2) with the produce training image datasets (1.3 and 1.5) and sourced weights and configuration files this code will instruct how to run the training process on the users local machine (source code comes from: https://github.com/AlexeyAB/darknet)
 
-5. Detailed explanation of the mean Average Percision (mAP) used to asses training performance of classifiers (REF paper erin)
-
-| Detection type | Explanation |
-| ------------- | ------------- |
-| True positives (TP)  | the number of correct detections of a ground-truth bounding box  |
-| False positives (FP)  | the number of incorrect detections of a non-existent object or a detection misplaced from the ground-truth bounding boxes  |
-| False negative (FN)  | the number of undetected ground-truth bounding boxes  |
-
-In order to define what a correct detection is the Intersection over Union (IoU) metric is used. IoU measures the overlapping area between the predicted bounding box (B_p) and the ground-truth bounding box (B_gt) from the training dataset (1.), and divided by the area of union between them. It can be defined using the following equation (Padilla et al., 2020)
-
-IoU = area(B_p∩B_gt)/(area(B_p∪B_gt ).    (1)
-
-The IoU has an associated threshold (t) that is pre-defined by the user, thus a correct detection can be classified as IoU ≥t and incorrect if IoU <t. In this case IoU was set to 0.5; meaning 50% overlap between B_p and B_gt is required for a detection to be counted as a TP. 
-
-From the number of TP, FP, FN detections made by the classifiers precision P and recall R are calculated respectively and defined as
-P=  TP/(TP+FP),     (2)
-R=  TP/(TP+FN).     (3)
-
-Precision is the percentage of TPs within all the predictions (i.e. rate of FPs), where IoU threshold is 0.5. Whilst recall is the percentage of TPs amongst all the given ground truths. During each training cycle the classifiers precision and recall values are plotted on a P-R curve, were the area under the P-R curve (AUC) indicates the classifiers performance, a good performance would be indicative of a high precision with increasing recall.
-
-To increase the accuracy of AUC the curve is interpolated using an 11-pointed average precision (AP, Everingham et al., 2010) defined as:
-
-AP=  1/11 ∑_(R∈{0,0.1,….1})〖P_interp (R)〗,(4)
-
-Where,
-P_interp (R)=max⁡P(R ̃),  R ̃≥ R.   (5)
-
-Here the maximum precision P_interp (R) at 11 equally spaced recall levels [0,0.1,...,1] is averaged. Then mAP is calculated to give a measure of an object detectors performance given multiple classes are represented in the training dataset. Thus, it can be defined as: 
-
-mAP=  1/N ∑_(i=1)^N〖AP_i 〗,(6)
-
-Where the AP_i is simply the AP at each 11 point interval (i) on the P-R curve over all classes (N) (Padilla et al., 2020). In this study N =1 making mAP≈AP.
-
 # 3. Instructions and codes used in Methods: Testing classifier performance using independent data as part of a novel pipeline for real-time ROV deployment: in-situ and synthetic ship
 The following codes are highlighted in consecuetive steps to describe the process of sea deployment of a YOLOv3 or v4 classifiers to detect a target species or multiple target species.
 
@@ -92,22 +59,22 @@ The following equiptment required:
 1. XCODEX: Calculation of recall, precision, accuracy and F1 score metrics
 
 Recall (sensitivity or true positive rate) quantifies the proportion of areas (1s increments along transect) of S. fragilissima in the transect correctly identified. It varies between 0 and 1, were 1 means all areas are identified.
-Recall=  TP/(TP+FN)  .   (7)
+$Recall=  TP/(TP+FN)  .   (7)
 
 Precision (positive predictive value) quantifies the proportion of TPs among all the positive predictions for areas of S. fragilissima. A value of 1 indicates all the positive detections for areas of S. fragilissima are in fact areas of S. fragilissima.
-Precision=  TP/(TP+FP)  .   (8)
+$Precision=  TP/(TP+FP)  .   (8)
 
 Accuracy quantifies the number of all correct predictions (TP + TN) for areas of S. fragilissima presence or absence with respect to the total predictions made. A value of 1 implies no false predictions (FP + FN) and all correct predictions are identified.  
-Accuracy=  (TP+TN)/(TP+FP+TN+FN)  .   (9)
+$Accuracy=  (TP+TN)/(TP+FP+TN+FN)  .   (9)
 
 F1 Score quantifies the harmonic mean of precision and recall, meaning a value of 1 indicates perfect precision and recall (as defined in equation 7 and 8). 
-F_1=  TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall).   (10)
+$F_1=  TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall).   (10)
 
 Each metric gave an estimation of the overall performance of each classifier in order to determine the best performing in real-time analysis, as well as being fitting for an ecological setting.
 
 S7: Assessing error of the best classifier at counting individual S. fragilissima
 Root mean square error calculation:
-RMSE= √MSE  = √(1/N ∑_(i=1)^N▒〖(y_i-(y_i ) ̂ 〗) )^2,    (11)
+$RMSE= √MSE  = √(1/N ∑_(i=1)^N▒〖(y_i-(y_i ) ̂ 〗) )^2,    (11)
 Where, N is the amount of data points (N = 100), i is the data point number being compared (1 – 100th), y_i is the count of S. fragilissima at the ith data point that is manually counted, whilst (y_i ) ̂ is the corresponding predicted count made by the classifier. 
 
 
