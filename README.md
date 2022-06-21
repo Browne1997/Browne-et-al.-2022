@@ -57,10 +57,10 @@ The following equiptment required:
 # 4. Computer vision metrics used in Methods: Calculating classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
 
 - Recall (sensitivity or true positive rate) quantifies the proportion of areas (1s increments along transect) of S. fragilissima in the transect correctly identified. It varies between 0 and 1, were 1 means all areas are identified.
--   * $Recall=  {TP/(TP+FN)}  .   (7)
+   * $ Recall=  {TP/(TP+FN)} $
 
 - Precision (positive predictive value) quantifies the proportion of TPs among all the positive predictions for areas of S. fragilissima. A value of 1 indicates all the positive detections for areas of S. fragilissima are in fact areas of S. fragilissima.
-        *Precision=  TP/(TP+FP)  .   (8)
+  * $ Precision=  {TP/(TP+FP)} $ 
 
 - Accuracy quantifies the number of all correct predictions (TP + TN) for areas of S. fragilissima presence or absence with respect to the total predictions made. A value of 1 implies no false predictions (FP + FN) and all correct predictions are identified.  
         *Accuracy=  (TP+TN)/(TP+FP+TN+FN)  .   (9)
