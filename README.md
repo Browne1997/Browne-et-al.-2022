@@ -63,13 +63,13 @@ The following equiptment required:
   * $ Precision=  {TP/(TP+FP)} $ 
 
 - Accuracy quantifies the number of all correct predictions (TP + TN) for areas of S. fragilissima presence or absence with respect to the total predictions made. A value of 1 implies no false predictions (FP + FN) and all correct predictions are identified.  
-        *Accuracy=  (TP+TN)/(TP+FP+TN+FN)  .   (9)
+  * $ Accuracy=  {(TP+TN)/(TP+FP+TN+FN)}
 
 - F1 Score quantifies the harmonic mean of precision and recall, meaning a value of 1 indicates perfect precision and recall (as defined in equation 7 and 8). 
   * $ F_1=  {TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall)} $ 
 
 - Root mean square error: Assessing error of the best classifier at counting individual S. fragilissima
-  * $ RMSE= {√MSE}  = {√(1/N ∑_{(i=1)}^N▒〖(y_i-(y_i ) ̂ 〗) )^2} $ 
+  * $ RMSE= {√MSE}  = {√(1/N ∑_{(i=1)}^N〖(y_i-(y_i ) ̂ 〗) )^2} $ 
 Where, N is the amount of data points (N = 100), i is the data point number being compared (1 – 100th), y_i is the count of S. fragilissima at the ith data point that is manually counted, whilst (${y_i}) ̂ is the corresponding predicted count made by the classifier. 
 
 
