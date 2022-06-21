@@ -67,6 +67,7 @@ Data outputs are individually saved frame from the darknet detector, denoting th
 
 - Root mean square error: Assessing error of the best classifier at counting individual S. fragilissima
   * $ RMSE= {√MSE}  = {√(1/N ∑_{(i=1)}^N〖(y_i-(y_i ) ̂ 〗) )^2} $ 
+
 Where, N is the amount of data points (N = 100), i is the data point number being compared (1 – 100th), y_i is the count of S. fragilissima at the ith data point that is manually counted, whilst (${y_i}) ̂ is the corresponding predicted count made by the classifier. 
 
 
