@@ -1,14 +1,13 @@
-#!/bin/bash
+# Run in bash terminal window as follows:
+bash run_capture.sh
 
-# Run in separate bash terminal window after the RTSP has been ran
-# reminder: X=value assigns to a bash variable, NO spaces allowed around 
+#Notes:
+# Comment out line with '#; depending on using vieo or livetsream
 
 # Synthetic ship set-up: run on video
 CAM_STUFF="-video_size 1920x1080   -i /video/directory"
 # In-situ set-up: run on livestream
 CAM_STUFF="-video_size 1920x1080   -i /video/directory"
-
-#ffplay $CAM_STUFF 
 
 # working h265 hardware encoded
 # -g 1 reference frame every one
