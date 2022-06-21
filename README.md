@@ -19,11 +19,8 @@ Figure 1| Training data preparation
 # 2. Instructions and codes used in Methods: Training classifiers and Assessment of classifier training performance
 
 1. darknet_compiling: Instructions to compile Darknet on local machine for 1) training and 2) Real-time running
-2. File structure for training on local machine should be as follows:
- FIGURE OF THIS ERIN 
+2. File structure for training on local machine outlined in XXXXX
 3. Weights and configuration files explanation and source
-
-Table 1 outlines where classifier architectures weights files (used for storing the parameters learnt during training corresponding to features of the target class) and corresponding configuration files (outlining classifiers architecture in terms of functions, mathematics etc.) are sourced. These weights are either pre-trained on larger imagery datasets (lower level features already learned and stored in weights file), also known as transfer learning. Or the weights have no pre-trained features, therefore all features learned and stored in the weights files are directly from the training imagery created in this study, also known as train-from-scratch. 
 
 Table 1| Sources for weights and configuration files for training from scratch (VIAME API GitHub Version 0.15.1 (YOLOv3) and Version 0.17.2 (YOLOv4)) and transfer learning (AlexeyAB GitHub).
 | Classifiers  | Weights files      | Configuration files |
