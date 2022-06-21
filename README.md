@@ -66,10 +66,10 @@ The following equiptment required:
         *Accuracy=  (TP+TN)/(TP+FP+TN+FN)  .   (9)
 
 - F1 Score quantifies the harmonic mean of precision and recall, meaning a value of 1 indicates perfect precision and recall (as defined in equation 7 and 8). 
-        *F_1=  TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall).   (10)
+  * $ F_1=  {TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall)} $ 
 
 - Root mean square error: Assessing error of the best classifier at counting individual S. fragilissima
-        *RMSE= √MSE  = √(1/N ∑_{(i=1)}^N▒〖(y_i-(y_i ) ̂ 〗) )^2,    (11)
+  * $ RMSE= {√MSE}  = {√(1/N ∑_{(i=1)}^N▒〖(y_i-(y_i ) ̂ 〗) )^2} $ 
 Where, N is the amount of data points (N = 100), i is the data point number being compared (1 – 100th), y_i is the count of S. fragilissima at the ith data point that is manually counted, whilst (${y_i}) ̂ is the corresponding predicted count made by the classifier. 
 
 
