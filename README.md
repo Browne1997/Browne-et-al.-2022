@@ -49,8 +49,11 @@ The following equiptment is required:
   2. Feeds livestream to darknet detector demo for real time classification and detection: run_classifier.sh
   3. Transform .JSON generated detections (darknet detector demo) into a readable .csv format for classifier performance analysis (4.): save_data.py
 
-# 4. Computer vision metrics used in Methods: calculations used for classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
+# 4. Codes used in Methods for classifier performance in real-time: classifier_performance
 
+Calculations and codes used for classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
+
+Code: presence_absence.R
 - Recall (sensitivity or true positive rate) quantifies the proportion of areas (1s increments along transect) of S. fragilissima in the transect correctly identified. It varies between 0 and 1, were 1 means all areas are identified.
    * $ Recall=  {TP/(TP+FN)} $
 
@@ -63,6 +66,7 @@ The following equiptment is required:
 - F1 Score quantifies the harmonic mean of precision and recall, meaning a value of 1 indicates perfect precision and recall (as defined in equation 7 and 8). 
   * $ F_1=  {TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall)} $ 
 
+Code: abundance.R
 - Root mean square error: Assessing error of the best classifier at counting individual S. fragilissima
   * $ RMSE= {√MSE}  = {√(1/N ∑_{(i=1)}^N〖(y_i-(y_i ) ̂ 〗) )^2} $ 
 
