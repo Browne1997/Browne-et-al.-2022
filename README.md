@@ -4,7 +4,7 @@ Author: Erin Browne and David Hutchinson
 
 Folders in repository correspond and include the following steps taken below
 
-# 1. Instructions and codes used in Methods: Training data preparation
+# 1. Instructions and codes used in Methods: training_data_preparation
 
 ![image](https://user-images.githubusercontent.com/91316035/167623090-17f7b6c2-183b-4633-b18b-962659cc5054.png)
 Figure 1| Training data preparation 
@@ -15,7 +15,7 @@ Figure 1| Training data preparation
 4. 1st training image dataset (VIAME_preprocessing.sh): with VIAME installed on local machine follow instructions in code to produce the augmented dataset (Fig1.C)
 4. 2nd training image dataset (skip_viame.py): code to produce same data outputs needed for training as VIAME without augmentation (varying brightness and resolution) (Fig1.C)
 
-# 2. Instructions and codes used in Methods: Training classifiers and Assessment of classifier training performance
+# 2. Instructions and codes used in Methods: training_classifier
 
 1. darknet_compiling: Instructions to compile Darknet on local machine for 1) training and 2) Real-time running
 2. File structure for training on local machine outlined in XXXXX
@@ -29,7 +29,7 @@ Table 1| Sources for weights and configuration files for training from scratch (
 
 4. set_training: using the outlined file structure (2.2) with the produce training image datasets (1.3 and 1.5) and sourced weights and configuration files this code will instruct how to run the training process on the users local machine (source code comes from: https://github.com/AlexeyAB/darknet)
 
-# 3. Instructions and codes used in Methods: Testing classifier performance using independent data as part of a novel pipeline for real-time ROV deployment: in-situ and synthetic ship
+# 3. Instructions and codes used in Methods: testing_classifier
 ![image](https://user-images.githubusercontent.com/91316035/163668237-5125358e-afaa-41f5-8f13-0a74f53569f1.png)
 Figure 1| In-situ set-up for real-time or synthetic ship to test real-time ability or to perform post-analysis on video data for faster results.
 
@@ -51,7 +51,7 @@ The following equiptment is required:
 
 Data outputs are individually saved frame from the darknet detector, denoting the object detected within the image is done with a bounding box and a confidence score. Additionally a .csv file is produce with every detection made and at which time within the video and frame number.
 
-# 4. Computer vision metrics used in Methods: Calculating classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
+# 4. Computer vision metrics used in Methods: calculations used for classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
 
 - Recall (sensitivity or true positive rate) quantifies the proportion of areas (1s increments along transect) of S. fragilissima in the transect correctly identified. It varies between 0 and 1, were 1 means all areas are identified.
    * $ Recall=  {TP/(TP+FN)} $
@@ -68,6 +68,6 @@ Data outputs are individually saved frame from the darknet detector, denoting th
 - Root mean square error: Assessing error of the best classifier at counting individual S. fragilissima
   * $ RMSE= {√MSE}  = {√(1/N ∑_{(i=1)}^N〖(y_i-(y_i ) ̂ 〗) )^2} $ 
 
-Where, N is the amount of data points (N = 100), i is the data point number being compared (1 – 100th), y_i is the count of S. fragilissima at the ith data point that is manually counted, whilst (${y_i}) ̂ is the corresponding predicted count made by the classifier. 
+Where, N is the amount of data points (N = 100), i is the data point number being compared (1 – 100th), y_i is the count of S. fragilissima at the ith data point that is manually counted, whilst (${y_i}$) ̂ is the corresponding predicted count made by the classifier. 
 
 
