@@ -49,8 +49,6 @@ The following equiptment is required:
   2. Feeds livestream to darknet detector demo for real time classification and detection: run_classifier.sh
   3. Transform .JSON generated detections (darknet detector demo) into a readable .csv format for classifier performance analysis (4.): save_data.py
 
-Data outputs are individually saved frame from the darknet detector, denoting the object detected within the image is done with a bounding box and a confidence score. Additionally a .csv file is produce with every detection made and at which time within the video and frame number.
-
 # 4. Computer vision metrics used in Methods: calculations used for classifier performance in detecting areas of presence-absence and individual counts S. fragilissima
 
 - Recall (sensitivity or true positive rate) quantifies the proportion of areas (1s increments along transect) of S. fragilissima in the transect correctly identified. It varies between 0 and 1, were 1 means all areas are identified.
