@@ -13,13 +13,13 @@ Figure 1| Training data preparation
 2. xls2csv.py: code to transform BIIGLE annotation .xls files to VIAME .csv format (see Fig.1B)
 3. viame_installation: Installation instructions for VIAME at https://github.com/VIAME/VIAME 
 4. 1st training image dataset (VIAME_preprocessing.sh): with VIAME installed on local machine follow instructions in code to produce the augmented dataset (Fig1.C)
-4. 2nd training image dataset (skip_viame.py): code to produce same data outputs needed for training as VIAME without augmentation (varying brightness and resolution) (Fig1.C)
+5. 2nd training image dataset (skip_viame.py): code to produce same data outputs needed for training as VIAME without augmentation (varying brightness and resolution) (Fig1.C)
 
 # 2. Instructions and codes used in Methods: training_classifier
 
 1. darknet_compiling: Instructions to compile Darknet on local machine for 1) training and 2) Real-time running
-2. File structure for training on local machine outlined in XXXXX
-3. Weights and configuration files explanation and source
+2. File structure for training on local machine outlined in (FINISH DIAGRAM ERIN)
+3. Weights and configuration source (Table 1) 
 
 Table 1| Sources for weights and configuration files for training from scratch (VIAME API GitHub Version 0.15.1 (YOLOv3) and Version 0.17.2 (YOLOv4)) and transfer learning (AlexeyAB GitHub).
 | Classifiers  | Weights files      | Configuration files |
@@ -27,7 +27,7 @@ Table 1| Sources for weights and configuration files for training from scratch (
 | YOLOv3       | https://pjreddie.com/media/files/yolov3-spp.weights and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_v3_seed.weights | https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov3-spp.cfg and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_train.cfg |
 | YOLOv4       | https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137 and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_seed.weights  |  https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg and https://github.com/VIAME/VIAME/tree/main/configs/pipelines/models/yolo_train.cfg |
 
-4. set_training: using the outlined file structure (2.2) with the produce training image datasets (1.3 and 1.5) and sourced weights and configuration files this code will instruct how to run the training process on the users local machine (source code comes from: https://github.com/AlexeyAB/darknet)
+4. set_training: using the outlined file structure (diagram 2.2), two training image datasets (1.3 and 1.5), sourced weights and configuration files (2.3) this code will instruct how to run the training process on the users local machine (source code comes from: https://github.com/AlexeyAB/darknet).
 
 # 3. Instructions and codes used in Methods: testing_classifier
 ![image](https://user-images.githubusercontent.com/91316035/163668237-5125358e-afaa-41f5-8f13-0a74f53569f1.png)
