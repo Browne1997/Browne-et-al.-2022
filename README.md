@@ -45,8 +45,8 @@ The following equiptment is required:
   3. RTSP for sending data from Magewell to endpoint (darknet detector demo): install_rtsp.sh
  
  The following annotated codes outline how to run classifier over livestream or video
-  1. run_capture.sh
-  2. run_classifier.sh
+  1. Compresses and deinterlaces livestream, and then passes this from input device (Magewell Capture Card) and send to endpoint device (Darknet detector demo) run_capture.sh
+  2. Feeds livestream to darknet detector demo for real time classification and detection: run_classifier.sh
   3. Transform .JSON generated detections (darknet detector demo) into a readable .csv format for classifier performance analysis (4.): save_data.py
 
 Data outputs are individually saved frame from the darknet detector, denoting the object detected within the image is done with a bounding box and a confidence score. Additionally a .csv file is produce with every detection made and at which time within the video and frame number.
