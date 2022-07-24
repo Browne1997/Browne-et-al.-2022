@@ -65,7 +65,7 @@ Where the AP_i is simply the AP at each 11 point interval (i) on the P-R curve o
 
 # 3. Instructions and codes used in Methods: testing_classifier
 ![image](https://user-images.githubusercontent.com/91316035/163668237-5125358e-afaa-41f5-8f13-0a74f53569f1.png)
-Figure 1| In-situ set-up for real-time or synthetic ship to test real-time ability or to perform post-analysis on video data for faster results.
+Figure 3| In-situ set-up for real-time or synthetic ship to test real-time ability or to perform post-analysis on video data for faster results.
 
 The following equiptment is required:
   1. Magewell capture card inserted into computer
