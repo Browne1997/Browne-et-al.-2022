@@ -34,7 +34,7 @@ Table 1| Sources for weights (used for storing the parameters learnt during trai
 
 4. train_classifier: using the outlined file structure (Figure 2), two training image datasets (1.3 and 1.5), sourced weights and configuration files (2.3) this code will instruct how to run the training process on the users local machine (source code comes from: https://github.com/AlexeyAB/darknet). 
 
-5. Calculation of mean Average Precision (mAP) outputted by Darknet detector demo explained in detail: 
+5. Calculation of mean Average Precision (mAP) outputted by Darknet framework explained in detail: 
 
 The following performance metrics are used to calculate mAP:
 | Detection Type   | Definition         |
