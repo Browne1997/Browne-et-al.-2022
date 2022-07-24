@@ -6,7 +6,7 @@ Folders in repository correspond and include the following steps taken below
 
 # 1. Instructions and codes used in Methods: training_data_preparation
 
-![image](https://user-images.githubusercontent.com/91316035/167623090-17f7b6c2-183b-4633-b18b-962659cc5054.png)
+[notes_pub2.txt](https://github.com/Browne1997/Browne-et-al.-2022/files/9175489/notes_pub2.txt)
 Figure 1| Training data preparation 
 
 1. extract_frames_N.py: code to produce deinterlaced framegrabs at 20 secs or 1min intervals from ROV Isis video (see Fig.1A) + * Code required to run the ffmpeg section * - DAVID
