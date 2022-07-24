@@ -55,13 +55,13 @@ From the number of TP, FP, FN detections made by the classifiers precision P and
 
 Precision is the percentage of TPs within all the predictions (i.e. rate of FPs), where IoU threshold is 0.5. Whilst recall is the percentage of TPs amongst all the given ground truths. During each training cycle the classifiers precision and recall values are plotted on a P-R curve, were the area under the P-R curve (AUC) indicates the classifiers performance, a good performance would be indicative of a high precision with increasing recall. To increase the accuracy of AUC the curve is interpolated using an 11-pointed average precision (AP, Everingham et al., 2010) defined as:
 
-AP=  1/11 ∑_(R∈{0,0.1,….1})▒〖P_interp (R)〗,(4)
+AP=  1/11 ∑_(R∈{0,0.1,….1})〖P_interp (R)〗,(4)
 Where,
 P_interp (R)=max⁡〖P(R ̃),〗  R ̃≥R.   (5)
 
 Here the maximum precision P_interp (R) at 11 equally spaced recall levels [0,0.1,...,1] is averaged. Then mAP is calculated to give a measure of an object detectors performance given multiple classes are represented in the training dataset. Thus, it can be defined as: 
 
-mAP=  1/N ∑_(i=1)^N▒〖AP_i 〗,(6)
+mAP=  1/N ∑_(i=1)^N〖AP_i 〗,(6)
 
 Where the AP_i is simply the AP at each 11 point interval (i) on the P-R curve over all classes (N) (Padilla et al., 2020). In this study N =1 making mAP≈AP.
 
@@ -92,20 +92,20 @@ Calculations and codes used for classifier performance in detecting areas of pre
 
 Code: presence_absence.R
 - Recall (sensitivity or true positive rate) quantifies the proportion of areas (1s increments along transect) of S. fragilissima in the transect correctly identified. It varies between 0 and 1, were 1 means all areas are identified.
-   * $ Recall=  {TP/(TP+FN)} $
+   *  Recall=  {TP/(TP+FN)} 
 
 - Precision (positive predictive value) quantifies the proportion of TPs among all the positive predictions for areas of S. fragilissima. A value of 1 indicates all the positive detections for areas of S. fragilissima are in fact areas of S. fragilissima.
-  * $ Precision=  {TP/(TP+FP)} $ 
+  *  Precision=  {TP/(TP+FP)}  
 
 - Accuracy quantifies the number of all correct predictions (TP + TN) for areas of S. fragilissima presence or absence with respect to the total predictions made. A value of 1 implies no false predictions (FP + FN) and all correct predictions are identified.  
-  * $ Accuracy=  {(TP+TN)/(TP+FP+TN+FN)}
+  *  Accuracy=  {(TP+TN)/(TP+FP+TN+FN)}
 
 - F1 Score quantifies the harmonic mean of precision and recall, meaning a value of 1 indicates perfect precision and recall (as defined in equation 7 and 8). 
-  * $ F_1=  {TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall)} $ 
+  *  F_1=  {TP/(TP+1/2(FP+FN))=2∙(precision∙recall)/(precision+recall)}  
 
 Code: abundance.R
 - Root mean square error: Assessing error of the best classifier at counting individual S. fragilissima
-  * $ RMSE= {√MSE}  = {√(1/N ∑_{(i=1)}^N〖(y_i-(y_i ) ̂ 〗) )^2} $ 
+  *  RMSE= {√MSE}  = {√(1/N ∑_{(i=1)}^N〖(y_i-(y_i ) ̂ 〗) )^2}  
 
 Where, N is the number of 1-second increments (N = 100), i is the increment number being compared (1 – 100th), y_i is the manual count of S. fragilissima at the ith data point, whilst (${y_i}$) ̂ is the corresponding predicted count made by the classifier. 
 
