@@ -37,10 +37,13 @@ Table 1| Sources for weights (used for storing the parameters learnt during trai
 5. Calculation of mean Average Precision (mAP) outputted by Darknet detector demo explained in detail: 
 
 The following performance metrics are used to calculate mAP:
-True positives (TP): the number of correct detections of a ground-truth bounding box; 
-False positives (FP): the number of incorrect detections of a non-existent object or a detection misplaced from the ground-truth bounding boxes;
-False negative (FN): the number of undetected ground-truth bounding boxes;
-In order to define what a correct detection is the Intersection over Union (IoU) metric is used. IoU measures the overlapping area between the predicted bounding box (B_p) and the ground-truth bounding box (B_gt) from the training dataset, and divided by the area of union between them. It can be defined using the following equation (Padilla et al., 2020),  
+| Detection    | Definition         |
+| ------------ | ------------------ | 
+| True positives (TP)       | the number of correct detections of a ground-truth bounding box | 
+| False positives (FP)      | the number of incorrect detections of a non-existent object or a detection misplaced from the ground-truth bounding boxes  | 
+| False negative (FN) | the number of undetected ground-truth bounding boxes |
+
+In order to define what a correct detection is the Intersection over Union (IoU) metric is used. IoU measures the overlapping area between the predicted bounding box (B_p) and the ground-truth bounding box (B_gt) from the training dataset, and divided by the area of union between them. It can be defined using the following equation:
 
   * $ IoU=  area(B_p∩B_gt )/(area(B_p∪B_gt ).    (1) $
 
