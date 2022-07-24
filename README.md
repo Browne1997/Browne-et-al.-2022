@@ -19,8 +19,10 @@ Figure 1| Training data preparation
 
 1. darknet_compiling: Instructions to compile Darknet on local machine for 1) training and 2) Real-time running
 2. File structure for training on local machine outlined in 
+
 ![training_filestruct](https://user-images.githubusercontent.com/91316035/180641405-492942e4-374d-4e70-8ea0-8e0269380be2.jpg)
 Figure 2: File structure on local machine required for training
+
 3. Weights and configuration source (Table 1) 
 
 Table 1| Sources for weights and configuration files for training from scratch (VIAME API GitHub Version 0.15.1 (YOLOv3) and Version 0.17.2 (YOLOv4)) and transfer learning (AlexeyAB GitHub).
