@@ -37,7 +37,7 @@ Table 1| Sources for weights (used for storing the parameters learnt during trai
 5. Calculation of mean Average Precision (mAP) outputted by Darknet detector demo explained in detail: 
 
 The following performance metrics are used to calculate mAP:
-| Detection    | Definition         |
+| Detection Type   | Definition         |
 | ------------ | ------------------ | 
 | True positives (TP)       | the number of correct detections of a ground-truth bounding box | 
 | False positives (FP)      | the number of incorrect detections of a non-existent object or a detection misplaced from the ground-truth bounding boxes  | 
